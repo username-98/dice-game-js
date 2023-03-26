@@ -11,6 +11,8 @@ const player1Scoreboard = document.getElementById("player1Scoreboard")
 const player2Scoreboard = document.getElementById("player2Scoreboard")
 const player1Dice = document.getElementById("player1Dice")
 const player2Dice = document.getElementById("player2Dice")
+const player1 = document.getElementById("player1")
+const player2 = document.getElementById("player2")
 const rollBtn = document.getElementById("rollBtn")
 const resetBtn = document.getElementById("resetBtn")
 
@@ -33,6 +35,8 @@ rollBtn.addEventListener("click", function () {
       msgEl.innerText = "🏆🏆Player 1️⃣ Wins!🏆🏆"
       player1Dice.classList.add("winner")
       player2Dice.classList.add("looser")
+      player1.classList.add("playerWinner")
+      player2.classList.add("playerLooser")
     } else {
       msgEl.innerText = "Player 2️⃣ Turn"
     }
@@ -49,6 +53,8 @@ rollBtn.addEventListener("click", function () {
       msgEl.innerText = "🏆🏆Player 2️⃣ Wins!🏆🏆"
       player2Dice.classList.add("winner")
       player1Dice.classList.add("looser")
+      player2.classList.add("playerWinner")
+      player1.classList.add("playerLooser")
     } else {
       msgEl.innerText = "Player 1️⃣ Turn"
     }
@@ -79,6 +85,8 @@ resetBtn.addEventListener("click", function () {
   player2Scoreboard.innerText = player2Score
   player1Dice.classList.remove("active", "fade", "winner", "looser")
   player2Dice.classList.remove("active", "fade", "winner", "looser")
+  player2.classList.remove("playerWinner","playerLooser")
+  player1.classList.remove("playerWinner","playerLooser")
   msgEl.style.color = "#fff"
   if (is1Winner) {
     msgEl.innerText = "Player 1️⃣ Turn"
